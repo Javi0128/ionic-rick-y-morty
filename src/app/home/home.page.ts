@@ -9,17 +9,7 @@ import { CharacterService } from '../services/character/character.service';
 })
 export class HomePage {
 
-  info: Character[] = [];
-
-  constructor( private characterService: CharacterService ) {
-
-    this.characterService.getCharacters()
-      .subscribe( (res: any) => {
-
-        this.info = res['results'];
-
-      });
-
+  constructor( ) {
   }
 
 }

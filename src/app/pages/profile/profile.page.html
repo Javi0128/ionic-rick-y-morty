@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title *ngIf="character">{{ character.name }}</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="user.list"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="character">
+
+    <img [src]="character.image" width="100%" alt="">
+
+    <ion-card-header>
+      <ion-card-title>{{character.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-item lines="none">
+        <ion-label>Status</ion-label>
+        <span slot="end">{{character.status}}</span>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Specie</ion-label>
+        <span slot="end">{{character.species}}</span>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Gender</ion-label>
+        <span slot="end">{{character.gender}}</span>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Date</ion-label>
+        <span >{{character.created}}</span>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
