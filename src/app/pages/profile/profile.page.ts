@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Character } from 'src/app/models/character';
 import { CharacterService } from 'src/app/services/character/character.service';
 
@@ -13,6 +14,10 @@ export class ProfilePage implements OnInit {
   profileId: number;
   character: Character;
 
+  character$: Observable<Character>;
+
+
+
   constructor(private activatedRoute: ActivatedRoute,
               private characterService: CharacterService
             ) { }
@@ -21,15 +26,17 @@ export class ProfilePage implements OnInit {
 
     this.profileId = parseInt( this.activatedRoute.snapshot.paramMap.get('id')),
 
-    this.characterService.getCharacter(this.profileId)
+    // this.characterService.getCharacter(this.profileId)
 
-      .subscribe( (res: Character)=>{
+    //   .subscribe( (res: Character)=>{
 
-        this.character = res;
+    //     this.character = res;
 
-      }
+    //   }
 
-      );
+    //   );
+
+    this.character$ = this.characterService.getCharacter( this.profileId );
 
   }
 
