@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Rick & Morty Characters
+      Rick & Morty Episodes
     </ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
@@ -14,18 +14,16 @@
   <ion-list>
 
     <ion-list-header>
-      Characters
+      Episodes
     </ion-list-header>
 
-    <ion-item *ngFor="let character of characters" [routerLink]="['/profile', character.id]">
-      <ion-thumbnail slot="start">
-        <img [src]="character.image">
-      </ion-thumbnail>
+    <ion-item *ngFor="let episode of episodes" [routerLink]="['/episode-details', episode.id]">
+
       <ion-label>
         
-        <h2>{{ character.name }}</h2>
-        <h3>{{ character.species }}</h3>
-        <p>{{ character.status }}</p>
+        <h2>{{ episode.name }}</h2>
+        <h3>{{ episode.episode }}</h3>
+        <p>{{ episode.created }}</p>
 
       </ion-label>
     </ion-item>

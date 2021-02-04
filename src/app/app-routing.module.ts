@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'user-list',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -18,6 +18,14 @@ const routes: Routes = [
   {
     path: 'profile/:id',
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'episode-list',
+    loadChildren: () => import('./pages/episode-list/episode-list.module').then( m => m.EpisodeListPageModule)
+  },
+  {
+    path: 'episode-details/:id',
+    loadChildren: () => import('./pages/episode-details/episode-details.module').then( m => m.EpisodeDetailsPageModule)
   },
 ];
 

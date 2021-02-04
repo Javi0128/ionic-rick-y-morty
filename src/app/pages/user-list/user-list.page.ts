@@ -27,8 +27,7 @@ export class UserListPage implements OnInit {
 
         console.log(err);
 
-      }
-      );
+      });
 
   }
 

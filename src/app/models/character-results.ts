@@ -1,16 +1,10 @@
 import { Character } from "./character";
+import { Info } from "./info";
 
 
 export interface CharacterResults {
 
-    info: {
-
-        count: number;
-        pages: number;
-        next: string;
-        prev: string;
-
-    };
+    info: Info;
 
     results: Character[];
 
