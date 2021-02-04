@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Rick & Morty Locations
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+
+    <ion-list-header>
+      Locations
+    </ion-list-header>
+
+    <ion-item *ngFor="let location of locations" [routerLink]="['/location-details', location.id]">
+
+      <ion-label>
+        
+        <h2>{{ location.name }}</h2>
+        <h3>{{ location.type }}</h3>
+        <p>{{ location.created }}</p>
+
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

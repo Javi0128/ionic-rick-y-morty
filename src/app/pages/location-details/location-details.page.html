@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title *ngIf="location">{{ location.name }}</ion-title>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="user.list"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-card *ngIf="location">
+  
+      <ion-card-header>
+        <ion-card-title>{{location.name}}</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+  
+        <ion-item lines="none">
+          <ion-label>Type</ion-label>
+          <span slot="end">{{location.type}}</span>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-label>Dimension</ion-label>
+          <span slot="end">{{location.dimension}}</span>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-label>Residents</ion-label>
+          <span slot="end">{{location.residents.length}} chapters</span>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-label>Created</ion-label>
+          <span>{{location.created}}</span>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-label>Url</ion-label>
+          <a href="{{location.url}}">{{location.url}}</a>
+        </ion-item>
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

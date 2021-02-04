@@ -16,7 +16,7 @@ export class EpisodesService {
 
   getEpisodes(): Observable<EpisodeResults>{
 
-    return this.http.get<EpisodeResults>( this.url )
+    return this.http.get<EpisodeResults>( this.url );
 
   }
   
@@ -25,7 +25,7 @@ export class EpisodesService {
 
     if ( id ) {
       
-      return this.http.get<Episode>( `${this.url}/${id}`)
+      return this.http.get<Episode>( `${this.url}/${id}`);
 
     }
     

@@ -36,8 +36,9 @@
         <span >{{episode.created}}</span>
       </ion-item>
 
-      <ion-item lines="none" expand="full">
-        <ion-button href="{{ episode.url }}" color="warning" expand="full">Watch</ion-button>
+      <ion-item lines="none">
+        <ion-label>Url</ion-label>
+        <a href="{{episode.url}}">{{episode.url}}</a>
       </ion-item>
       
     </ion-card-content>
